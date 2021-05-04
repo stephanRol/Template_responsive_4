@@ -65,6 +65,16 @@ ul{
     margin-left: 20px;
 }
 
+.menu-btn{
+    position: absolute;
+    cursor: pointer;
+    top: 20px;
+    right: 35px;
+    z-index: 2;
+    font-size: 1.7rem;
+    display: none;
+}
+
 /* Showcase */
 
 hr{
@@ -74,7 +84,7 @@ hr{
     width: 100%;
     background: url(img/showcase2.jpg) no-repeat center center/cover; /*La imagen es muy grande para adaptarla se hace center/cover */
     height: 550px;
-    padding-bottom: 50px;
+    padding: 50px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -122,6 +132,7 @@ hr{
 .news-cards img{
     width: 100%;
     height: 200px;
+    border-radius: 6px;
 }
 
 .news-cards h3{
@@ -131,13 +142,186 @@ hr{
 
 .news-cards a{
     padding: 10px 0;
-    color: f2f2f2;
+    color: #f2f2f2;
     text-transform: uppercase;
     display: inline-block;
-
 }
 
 .news-cards a:hover{
     text-decoration: underline;
 }
 
+/* Cards Banner 1 */
+.cards-banner-one{
+    width: 100%;
+    height: 350px;
+    background: url('./img/tech-red.jpg');
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.cards-banner-one .content{
+    width: 40%;
+    padding: 90px 0 0 30px;
+    color: #ffffff;
+}
+
+.cards-banner-one p,
+.cards-banner-one h2{
+    margin: 10px 0 20px 0;
+}
+
+/* Cards Banner 2 */
+
+.cards-banner-two{
+    width: 100%;
+    height: 350px;
+    background: url('./img/image-five.jpg') no-repeat center center/cover;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.cards-banner-two .content{
+    width: 40%;
+    padding: 80px 0 0 30px;
+}
+
+.cards-banner-two p,
+.cards-banner-two h2{
+    margin: 10px auto;
+}
+
+/*Social*/
+.social{
+    margin: 50px;
+}
+
+.social p{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a{
+    margin: 0 30px;
+}
+
+.links a i{
+    font-size: 2rem; 
+    transition: 0.5s;  /*Hover out, para que el efecto aplicado no se acabe de golpe*/      
+}
+
+.links a i:hover{
+    transform: scale(1.2) translateY(-5px); 
+}
+
+.links a i:not(:hover){ /*Hover out, para que el efecto aplicado no se acabe de golpe*/
+    transition: 0.5s; 
+}
+
+/*Footer links*/
+
+.footer-links{
+    background-color: #2f3640;
+    color: white;
+    font-size: 15px;
+    padding: 35px 0;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer-container ul{
+    margin: 0 auto;
+}
+
+.footer-container ul li{
+    line-height: 2.3;
+}
+
+.footer-container ul li a:hover{
+    text-decoration: underline;
+}
+
+.footer{
+    background: #2f3640;
+    color: lightcyan;
+    font-size: 14px;
+    padding: 20px 0;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .menu-btn{
+        display: block;
+    }
+
+    .nav-main ul.nav-menu{
+        display: block;
+        position: absolute; /*para que este sobre todo?*/
+        top: 0;
+        left: 0;
+        background: #2f3640;
+        height: 100%;
+        padding: 30px;
+        opacity: 0.9;
+        transform: translate(-400px);
+        transition: transform 0.5s ease-in-out; 
+    }
+
+    .nav-main ul.nav-menu.show{
+        transform: translate(-20px);
+    }
+
+    .nav-main ul.nav-menu-right{
+        margin-right: 40px;
+    }
+
+    .nav-main ul.nav-menu li{
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .news-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-banner-one .content,
+    .cards-banner-two .content{
+        width: 80%;
+    }
+
+    .footer-links .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .news-cards{
+        grid-template-columns: 1fr;;
+    }
+
+    .news-cards img{
+        height: 250px;
+    }
+
+    .cards-banner-one .content,
+    .cards-banner-two .content{
+        width: 100%;
+        padding: 60px 30px;
+    }
+}
